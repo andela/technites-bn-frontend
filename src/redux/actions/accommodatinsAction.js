@@ -20,7 +20,6 @@ export const getAllLocations = () => async dispatch => {
       payload: locations.data
     });
   } catch (error) {
-    console.log(error);
   }
 };
 

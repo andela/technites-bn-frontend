@@ -310,4 +310,5 @@ describe("Most visited and trips stats Actions", () => {
     const calledActions = store.getActions();
     expect(calledActions.length).toEqual(0);
   });
+
 });

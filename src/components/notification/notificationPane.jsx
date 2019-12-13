@@ -90,6 +90,9 @@ export class NotificationPane extends Component {
       });
     }
   }
+  componentWillUnmount() {
+    if (socket )socket.close()
+  }
 
   render() {
     const {

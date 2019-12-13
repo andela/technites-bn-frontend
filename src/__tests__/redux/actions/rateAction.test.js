@@ -111,4 +111,23 @@ describe("Rate in actions", () => {
         await store.dispatch(getRate(1));
         const calledActions = store.getActions();
     });
+
+    it("should not get average ratings of an accomodation if network error", async () => {
+        moxios.wait(async () => {
+            const request = moxios.requests.mostRecent();
+            request.reject({
+                status: 400,
+                error:'error',
+                response: {
+                    status: 200,
+                    message: "Successfully registered in",
+                    data: {},
+                },
+            });
+            await flushPromises();
+        });
+
+        await store.dispatch(getRate(1));
+        const calledActions = store.getActions();
+    });
 });
