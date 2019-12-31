@@ -148,6 +148,7 @@ export class AddAccommodation extends Component {
                       </label>
                     </div>
 
+
                     <div className="form__checkbox-group">
                       <input
                         id="service3"
